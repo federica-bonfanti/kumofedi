@@ -1,0 +1,96 @@
+/*
+ * kumofedi.css
+ * ============
+ * KumoFedi theme — overrides Kumo's semantic colour tokens.
+ *
+ * HOW IT WORKS:
+ * Kumo uses CSS custom properties scoped to [data-theme="fedramp"].
+ * We define our own [data-theme="kumofedi"] block with the same
+ * token names but our own values.
+ *
+ * USAGE:
+ * Add data-theme="kumofedi" to your <html> or any parent element.
+ * Add data-mode="light" or data-mode="dark" to control mode.
+ *
+ * Example:
+ *   <html data-theme="kumofedi" data-mode="light">
+ *
+ * TOKEN GROUPS:
+ * - Brand       → primary action colour (buttons, links, focus rings)
+ * - Surfaces    → background layers (base, elevated, recessed)
+ * - Text        → foreground colours
+ * - Borders     → lines and rings
+ * - Status      → success, warning, danger, info
+ */
+
+[data-theme="kumofedi"] {
+
+  /* ─── BRAND ──────────────────────────────────────────────────────── */
+  /* The main accent colour. Kumo's default is orange/amber.
+     KumoFedi uses a warm terracotta-rose. */
+
+  --color-kumo-brand:          light-dark(#d0fb5e, #dffc92);
+  --color-kumo-brand-hover:    light-dark(#8bbd05, #afee06);
+  --color-kumo-brand-active:   light-dark(#6a9a00, #8bbd05);
+  --color-kumo-brand-tint:     light-dark(#fdf0ef, #d0fb5e);
+
+  /* ─── SURFACES ───────────────────────────────────────────────────── */
+  /* Layering system: base → elevated → recessed
+     base      = page background
+     elevated  = cards, popovers
+     recessed  = inputs, wells, sidebars */
+
+  --color-kumo-base:           light-dark(#faf8f5, #040019);
+  --color-kumo-elevated:       light-dark(#ffffff, #080030);
+  --color-kumo-recessed:       light-dark(#f0ece6, #030014);
+
+  /* Canvas is the outermost background (body / app shell) */
+  --color-kumo-canvas:         light-dark(#f4f0ea, #020011);
+
+  /* ─── TEXT ───────────────────────────────────────────────────────── */
+
+  --color-kumo-default:        light-dark(#1c1a18, #f0ece6);
+  --color-kumo-muted:          light-dark(#6b6258, #9c9186);
+  --color-kumo-subtle:         light-dark(#a89e94, #5c5248);
+  --color-kumo-on-brand:       light-dark(#ffffff, #ffffff);
+
+  /* ─── BORDERS ────────────────────────────────────────────────────── */
+
+  --color-kumo-line:           light-dark(#ddd8d2, #14103A);
+  --color-kumo-line-hover:     light-dark(#c8c2ba, #28223F);
+  --color-kumo-ring:           light-dark(#d0fb5e, #28223F);
+
+  /* ─── STATUS ─────────────────────────────────────────────────────── */
+
+  /* Success — sage green */
+  --color-kumo-success:        light-dark(#3a7a52, #5aad76);
+  --color-kumo-success-tint:   light-dark(#edf7f1, #0e2a1a);
+
+  /* Warning — amber */
+  --color-kumo-warning:        light-dark(#c07c20, #e8a84a);
+  --color-kumo-warning-tint:   light-dark(#fef7eb, #2e1c04);
+
+  /* Danger — deep red */
+  --color-kumo-danger:         light-dark(#b83028, #e05a52);
+  --color-kumo-danger-tint:    light-dark(#fdecea, #330c0a);
+
+  /* Info — dusty blue */
+  --color-kumo-info:           light-dark(#3a6a9a, #5a9ad0);
+  --color-kumo-info-tint:      light-dark(#eaf2fb, #0a1e30);
+
+  /* ─── TYPOGRAPHY ─────────────────────────────────────────────────── */
+  /* Override Kumo's font stack with something more editorial */
+
+  --font-kumo-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-kumo-mono: "DM Mono", ui-monospace, monospace;
+}
+
+/*
+ * FONT IMPORT
+ * -----------
+ * Add this to your HTML <head> for the KumoFedi fonts:
+ *
+ * <link rel="preconnect" href="https://fonts.googleapis.com">
+ * <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ * <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+ */
